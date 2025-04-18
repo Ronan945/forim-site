@@ -1,0 +1,32 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Contenu du site"
+    files:
+      - file: "content/home.md"
+        label: "Page d'accueil"
+        name: "home"
+        fields:
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Sous-slogan", name: "sous_slogan", widget: "string" }
+          - { label: "Présentation", name: "presentation", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Secteur", name: "secteur", widget: "string" }
+
+  - name: "realisations"
+    label: "Réalisations"
+    folder: "content/realisations"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
